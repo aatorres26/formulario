@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Formulario para excursion</h2>
+
+
+<form action="/action_page.php">
+  <fieldset>
+    <legend> Formulario:</legend>
+    <label for="fname">Primer nombre:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Primer Apellido:</label><br>
+    <input type="text" id="lname" name="lname" ><br>
+    <label for="edad">Edad:</label><br>
+    <input type="number" id="edad" name="edad" ><br><br>
+ 
+  <label for="cars">Como realizas tu visita?:</label>
+  <select id="cars" name="cars" size="4" multiple>
+    <option value="solo">Solo</option>
+    <option value="en pareja">En pareja</option>
+    <option value="familiar">Con algun familiar</option>
+    <option value="amigos">Grupo de amigos</option>
+    <option value="tour">Tour organizado</option>
+  </select><br><br>
+    <p>Fecha en la que nos visitara:</p>
+  <label for="fechallegada">Fecha de llegada:</label>
+  <input type="date" id="fechallegada" name="fechallegada">
+   <br><br>
+  <label for="fecharegreso">Fecha de salida:</label>
+  <input type="date" id="fecharegreso" name="fecharegreso">
+ <br><br>
+    <p>Medio de transporte utilizado para llegar:</p>
+    <input type="radio" id="vehiculoparticular" name="vehiculoparticular" value="vehiculoparticular">
+  <label for="vehiculoparticular">Vehiculo particular</label><br>
+  <input type="radio" id="Transportepublico" name="Transportepublico" value="Transportepublico">
+  <label for="Transportepublico">Transporte publico</label><br>
+  <input type="radio" id="motocicleta" name="motocicleta" value="motocicleta">
+  <label for="motocicleta">Motocicleta</label>
+  <br><br>
+  <p>Servicios que utilizara dentro de la visita:</p>
+ <input type="checkbox" id="s1" name="s1" value="higiene">
+  <label for="higiene"> Servicios higienicos</label><br>
+  <input type="checkbox" id="s2" name="s2" value="cafe">
+  <label for="s2"> Cafeteria</label><br>
+  <input type="checkbox" id="s3" name="s3" value="estacionamiento">
+  <label for="s3"> Estacionamiento</label><br>
+  <input type="checkbox" id="s4" name="s4" value="guia">
+  <label for="s4"> Servicio de guia turistico</label><br><br>
+    <label for="email">Introduzca su email para enviar la confirmacion:</label><br>
+  <input type="email" id="email" name="email"><br><br>
+  <label for="phone">Introduzca su numero de telefono:</label><br><br>
+  <input type="tel" id="phone" name="phone" placeholder="09-22145678" pattern="[0-9]{2}-[0-9]{8}" required><br><br>
+    <p>Comentario sobre que se podria mejorar del Tour:</p>   
+  <textarea name="message" rows="10" cols="100">Comentario</textarea>
+  <br><br>
+     <input type="submit" value="Submit">
+    <br><br>
+ </fieldset>
+</form>
+</form>
+
+</body>
+</html>
