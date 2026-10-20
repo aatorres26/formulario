@@ -1,5 +1,217 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formulario para excursion</title>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Figtree:wght@400;500;700&display=swap");
+
+  :root {
+    --noche: #1d2a35;
+    --cielo: #3b5566;
+    --ceniza: #e7ecee;
+    --nieve: #fbfcfc;
+    --brasa: #c9441f;
+    --linea: #d3dbe0;
+    /* Cambia aquí la imagen: archivo local o enlace https */
+    --imagen: url("volcan.jpg");
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* ---------- Imagen de portada ---------- */
+  html {
+    background-color: var(--ceniza);
+  }
+
+  html::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 400px;
+    z-index: -1;
+    background:
+      linear-gradient(rgba(29, 42, 53, 0.45), rgba(29, 42, 53, 0.25) 55%, var(--ceniza)),
+      var(--imagen) center / cover no-repeat,
+      var(--noche);
+  }
+
+  body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 20px 80px;
+    font-family: "Figtree", "Segoe UI", system-ui, sans-serif;
+    color: var(--noche);
+    line-height: 1.6;
+  }
+
+  /* ---------- Título ---------- */
+  h2 {
+    margin: 0 0 170px;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+    text-align: center;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--nieve);
+  }
+
+  /* ---------- Tarjeta del formulario ---------- */
+  fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 36px;
+    background: var(--nieve);
+    border: 1px solid var(--linea);
+    border-radius: 16px;
+    box-shadow: 0 24px 50px -24px rgba(29, 42, 53, 0.55);
+  }
+
+  legend {
+    padding: 6px 20px;
+    background: var(--brasa);
+    color: #fff;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+
+  label {
+    font-weight: 500;
+  }
+
+  /* Las preguntas llevan una marca lateral */
+  p {
+    margin: 22px 0 8px;
+    padding-left: 12px;
+    border-left: 4px solid var(--brasa);
+    font-weight: 700;
+  }
+
+  /* ---------- Campos ---------- */
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 100%;
+    margin: 6px 0 14px;
+    padding: 11px 14px;
+    background: var(--ceniza);
+    color: var(--noche);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font: inherit;
+    transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  }
+
+  input[type="date"] {
+    margin: 4px 0 4px 8px;
+    padding: 9px 12px;
+    background: var(--ceniza);
+    color: var(--noche);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font: inherit;
+    transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  }
+
+  select {
+    padding: 8px;
+  }
+
+  select option {
+    padding: 6px 8px;
+    border-radius: 6px;
+  }
+
+  textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
+
+  input::placeholder {
+    color: #7b8a95;
+  }
+
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  input[type="date"]:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    background: #fff;
+    border-color: var(--brasa);
+    box-shadow: 0 0 0 4px rgba(201, 68, 31, 0.18);
+  }
+
+  /* Radios y casillas */
+  input[type="radio"],
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0 8px 0 0;
+    vertical-align: -3px;
+    accent-color: var(--brasa);
+    cursor: pointer;
+  }
+
+  input[type="radio"] + label,
+  input[type="checkbox"] + label {
+    cursor: pointer;
+  }
+
+  /* ---------- Botón ---------- */
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    background: var(--brasa);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font: inherit;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.15s, transform 0.1s;
+  }
+
+  input[type="submit"]:hover {
+    background: #a93616;
+  }
+
+  input[type="submit"]:active {
+    transform: scale(0.98);
+  }
+
+  input[type="submit"]:focus-visible {
+    outline: 3px solid var(--noche);
+    outline-offset: 3px;
+  }
+
+  /* ---------- Móvil ---------- */
+  @media (max-width: 520px) {
+    body { padding-top: 48px; }
+    h2 { margin-bottom: 150px; }
+    fieldset { padding: 24px 18px; }
+    input[type="date"] { display: block; margin: 6px 0 4px; width: 100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
 <body>
 
 <h2>Formulario para excursion</h2>
